@@ -1,6 +1,6 @@
 /**
  * Natural Number Calculator application.
- * 
+ *
  * This is a very simple "RPN" (Reverse Polish Notation) calculator. There are
  * two operands, both of which always have natural number values. Direct entry
  * of a number is always to the bottom operand in the display. The "Clear"
@@ -12,9 +12,9 @@
  * with the result of the operator and the top operand with 0; except that
  * division replaces the bottom operand with the quotient and the top operand
  * with the remainder.
- * 
+ *
  * @author Bruce W. Weide
- * 
+ *
  */
 public final class NaturalNumberCalculator {
 
@@ -27,7 +27,7 @@ public final class NaturalNumberCalculator {
     /**
      * Main program that sets up main application window and starts user
      * interaction.
-     * 
+     *
      * @param args
      *            command-line arguments; not used
      */

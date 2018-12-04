@@ -65,13 +65,13 @@ public final class NNCalcController1 implements NNCalcController {
             view.updateDivideAllowed(false);
         }
 
-        if (bottom.compareTo(ZERO) >= 0) {
+        if (bottom.compareTo(INT_LIMIT) <= 0) {
             view.updatePowerAllowed(true);
         } else {
             view.updatePowerAllowed(false);
         }
 
-        if (bottom.compareTo(TWO) >= 0) {
+        if (bottom.compareTo(TWO) >= 0 && bottom.compareTo(INT_LIMIT) <= 0) {
             view.updateRootAllowed(true);
         } else {
             view.updateRootAllowed(false);
@@ -181,11 +181,9 @@ public final class NNCalcController1 implements NNCalcController {
     public void processPowerEvent() {
         NaturalNumber bottom = this.model.bottom();
         NaturalNumber top = this.model.top();
-        if (bottom.compareTo(INT_LIMIT) < 0) {
-            top.power(bottom.toInt());
-            bottom.transferFrom(top);
-            top.copyFrom(ZERO);
-        }
+        top.power(bottom.toInt());
+        bottom.transferFrom(top);
+        top.copyFrom(ZERO);
         updateViewToMatchModel(this.model, this.view);
     }
 
@@ -193,11 +191,9 @@ public final class NNCalcController1 implements NNCalcController {
     public void processRootEvent() {
         NaturalNumber bottom = this.model.bottom();
         NaturalNumber top = this.model.top();
-        if (bottom.compareTo(TWO) >= 0 && bottom.compareTo(INT_LIMIT) < 0) {
-            top.root(bottom.toInt());
-            bottom.transferFrom(top);
-            top.copyFrom(ZERO);
-        }
+        top.root(bottom.toInt());
+        bottom.transferFrom(top);
+        top.copyFrom(ZERO);
         updateViewToMatchModel(this.model, this.view);
     }
 

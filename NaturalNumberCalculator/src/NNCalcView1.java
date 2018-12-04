@@ -141,9 +141,9 @@ public final class NNCalcView1 extends JFrame implements NNCalcView {
          * Add the buttons to the main button panel, from left to right and top
          * to bottom
          */
-        mainButtonPanel.add(this.bDigits[9]);
-        mainButtonPanel.add(this.bDigits[8]);
         mainButtonPanel.add(this.bDigits[7]);
+        mainButtonPanel.add(this.bDigits[8]);
+        mainButtonPanel.add(this.bDigits[9]);
         mainButtonPanel.add(this.bAdd);
         mainButtonPanel.add(this.bDigits[4]);
         mainButtonPanel.add(this.bDigits[5]);
